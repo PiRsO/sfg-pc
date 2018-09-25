@@ -1,6 +1,6 @@
 package guru.springframework.sfgpc.model;
 
-public class Person {
+public class Person extends BaseEntity{
     private String firtName;
     private String lastName;
 
