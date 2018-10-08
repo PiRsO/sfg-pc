@@ -1,15 +1,15 @@
 package guru.springframework.sfgpc.model;
 
-public class Person extends BaseEntity{
-    private String firtName;
+public class Person extends BaseEntity {
+    private String firstName;
     private String lastName;
 
-    public String getFirtName() {
-        return firtName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirtName(String firtName) {
-        this.firtName = firtName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

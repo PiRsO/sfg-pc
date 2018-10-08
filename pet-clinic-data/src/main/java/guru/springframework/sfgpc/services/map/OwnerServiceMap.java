@@ -1,11 +1,11 @@
 package guru.springframework.sfgpc.services.map;
 
 import guru.springframework.sfgpc.model.Owner;
-import guru.springframework.sfgpc.services.CrudService;
+import guru.springframework.sfgpc.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -30,5 +30,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public void deletedById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(final String lastName) {
+        return null;
     }
 }
