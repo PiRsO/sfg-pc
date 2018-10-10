@@ -1,9 +1,11 @@
 package guru.springframework.sfgpc.bootstrap;
 
 import guru.springframework.sfgpc.model.Owner;
+import guru.springframework.sfgpc.model.PetType;
 import guru.springframework.sfgpc.model.Vet;
 import guru.springframework.sfgpc.services.OwnerService;
 import guru.springframework.sfgpc.services.VetService;
+import guru.springframework.sfgpc.services.map.PetTypeService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +14,12 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(final OwnerService ownerService, VetService vetService) {
+    public DataLoader(final OwnerService ownerService, final VetService vetService, final PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     /**
@@ -25,6 +29,15 @@ public class DataLoader implements CommandLineRunner {
      */
     @Override
     public void run(final String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        dog.setName("cat");
+        PetType savedCatPetType = petTypeService.save(cat);
+
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
