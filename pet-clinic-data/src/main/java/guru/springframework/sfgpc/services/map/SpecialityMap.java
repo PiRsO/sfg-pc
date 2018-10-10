@@ -1,13 +1,13 @@
 package guru.springframework.sfgpc.services.map;
 
 import guru.springframework.sfgpc.model.Speciality;
-import guru.springframework.sfgpc.services.SpecialitiesService;
+import guru.springframework.sfgpc.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialitiesMap extends AbstractMapService<Speciality, Long> implements SpecialitiesService {
+public class SpecialityMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
 
     @Override
     public Set<Speciality> findAll() {
