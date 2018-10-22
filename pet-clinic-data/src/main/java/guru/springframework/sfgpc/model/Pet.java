@@ -1,11 +1,14 @@
 package guru.springframework.sfgpc.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "pets")
@@ -19,6 +22,17 @@ public class Pet extends BaseEntity {
     private Owner owner;
     private LocalDate birthDate;
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits;
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(final Set<Visit> visits) {
+        this.visits = visits;
+    }
 
     public PetType getPetType() {
         return petType;
