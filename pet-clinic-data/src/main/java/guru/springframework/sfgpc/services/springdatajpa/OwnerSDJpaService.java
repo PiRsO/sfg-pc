@@ -4,7 +4,7 @@ import guru.springframework.sfgpc.model.Owner;
 import guru.springframework.sfgpc.repositories.OwnerRepository;
 import guru.springframework.sfgpc.repositories.PetRepository;
 import guru.springframework.sfgpc.services.OwnerService;
-import guru.springframework.sfgpc.services.map.PetTypeService;
+import guru.springframework.sfgpc.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

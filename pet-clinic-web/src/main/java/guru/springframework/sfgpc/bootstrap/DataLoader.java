@@ -10,7 +10,7 @@ import guru.springframework.sfgpc.services.OwnerService;
 import guru.springframework.sfgpc.services.SpecialityService;
 import guru.springframework.sfgpc.services.VetService;
 import guru.springframework.sfgpc.services.VisitService;
-import guru.springframework.sfgpc.services.map.PetTypeService;
+import guru.springframework.sfgpc.services.PetTypeService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
