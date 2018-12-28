@@ -2,6 +2,7 @@ package guru.springframework.sfgpc.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "owners") // this is default behaviour
+@EqualsAndHashCode
 public class Owner extends Person {
 
     @Builder
