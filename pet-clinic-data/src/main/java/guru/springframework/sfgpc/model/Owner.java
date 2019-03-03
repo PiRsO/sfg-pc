@@ -20,7 +20,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "owners") // this is default behaviour
-@EqualsAndHashCode
 public class Owner extends Person {
 
     @Builder
