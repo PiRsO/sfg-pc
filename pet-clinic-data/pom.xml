@@ -91,8 +91,8 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-					<shutdown>kill</shutdown>
-				</configuration>
+                    <shutdown>exit</shutdown>
+                </configuration>
             </plugin>
         </plugins>
     </build>
