@@ -90,6 +90,9 @@
                         <version>${junit-platform.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+					<shutdown>kill</shutdown>
+				</configuration>
             </plugin>
         </plugins>
     </build>
