@@ -39,4 +39,39 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Owner)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        Owner owner = (Owner) o;
+
+        if (getAddress() != null ? !getAddress().equals(owner.getAddress()) : owner.getAddress() != null) {
+            return false;
+        }
+        if (getCity() != null ? !getCity().equals(owner.getCity()) : owner.getCity() != null) {
+            return false;
+        }
+        if (getTelephone() != null ? !getTelephone().equals(owner.getTelephone()) : owner.getTelephone() != null) {
+            return false;
+        }
+        return getPets() != null ? getPets().equals(owner.getPets()) : owner.getPets() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getAddress() != null ? getAddress().hashCode() : 0);
+        result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
+        result = 31 * result + (getTelephone() != null ? getTelephone().hashCode() : 0);
+        result = 31 * result + (getPets() != null ? getPets().hashCode() : 0);
+        return result;
+    }
 }

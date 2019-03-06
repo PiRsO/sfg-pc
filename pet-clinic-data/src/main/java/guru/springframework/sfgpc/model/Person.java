@@ -1,6 +1,7 @@
 package guru.springframework.sfgpc.model;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import javax.persistence.MappedSuperclass;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
+@EqualsAndHashCode
 public class Person extends BaseEntity {
     public Person(final Long id, final String firstName, final String lastName) {
         super(id);

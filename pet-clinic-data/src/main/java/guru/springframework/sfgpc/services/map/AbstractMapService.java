@@ -3,17 +3,19 @@ package guru.springframework.sfgpc.services.map;
 import guru.springframework.sfgpc.model.BaseEntity;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
-    protected Map<Long, T> map = new HashMap<>();
+    protected Map<Long, T> map = new ConcurrentHashMap<>();
 
     Set<T> findAll() {
-       return new HashSet<>(map.values());
+        Set<T> all = new HashSet<>();
+        map.values().forEach(t -> all.add(t));
+        return all;
     }
 
     T findById(ID id) {
